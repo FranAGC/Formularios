@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="css/style.css">
+    <title>Document</title>
+</head>
+<body class="container" onload="fechaValida()">
+<header>
+  <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="index.html">Registro Médico</a>
+            <a class="nav-link" aria-current="page" href="#">Solicitud de Empleo</a>
+            <a class="nav-link" href="hotel.html">Reservación de Hotel</a>
+            <a class="nav-link" href="curso.html">Inscripción Curso Web</a>
+            <a class="nav-link" href="vehiculo.html">Cotizar Vehículo</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="col-md-8 col-lg-10">
+    <h4 class="mb-3">Solicitud de Empleo</h4>
+    <form class="needs-validation" novalidate method="get" action="/action.php">
+      <div class="row g-3">
+        <div class="col-12">
+          <label for="firstName" class="form-label">Nombres</label>
+          <input type="text" class="form-control" id="firstName" pattern="[a-zA-Z\s]+" placeholder="Ingresa tus nombres" required >
+          <div class="invalid-feedback">
+            Formato de nombre invalido.
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label for="lastName" class="form-label">Apellidos</label>
+          <input type="text" class="form-control" id="lastName" pattern="[a-zA-Z\s]+" placeholder="Ingresa tus apellidos" required>
+          <div class="invalid-feedback">
+            Formato de apellido invalido.
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label for="email" class="form-label">Email <span class="text-muted">(Opcional)</span></label>
+          <input type="email" class="form-control" id="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="you@example.com">
+          <div class="invalid-feedback">
+            Please enter a valid email address for shipping updates.
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label for="address" class="form-label">Direccion</label>
+          <input type="text" class="form-control" id="address" placeholder="Ingresa tu direccion" required pattern="[a-zA-Z0-9'-'\s]+">
+          <div class="invalid-feedback">
+            Please enter your shipping address.
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <label for="depto" class="form-label">Departamento</label>
+          <select class="form-select" id="deptos" required>
+          </select>
+        </div>
+
+        <div class="col-md-4">
+          <label for="muni" class="form-label">Municipio</label>
+          <select class="form-select" id="munis" required>
+          </select>
+          <div class="invalid-feedback">
+            Please provide a valid state.
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <label for="zip" class="form-label">Zip</label>
+          <input type="text" class="form-control" id="zip" placeholder="" required>
+          <div class="invalid-feedback">
+            Zip code required.
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <label for="fnac" class="form-label">Fecha de nacimiento</label>
+          <input type="date" class="form-control" id="fnac" min="1900-01-01" required>
+          <div class="invalid-feedback">
+            Fecha de nacimiento invalida
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <label for="depto" class="form-label">Sexo</label>
+          <select class="form-select" id="deptos" required>
+            <option value="M">M</option>
+            <option value="F">F</option>
+          </select>
+          <div class="invalid-feedback">
+            Campo obligatorio.
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <label for="depto" class="form-label">Estado Civil</label>
+          <select class="form-select" id="ecivil" required>
+            <option value="S">Soltero</option>
+            <option value="C">Casado</option>
+            <option value="D">Divorciado</option>
+          </select>
+          <div class="invalid-feedback">
+            Campo obligatorio
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label for="lastName" class="form-label">Nivel Academico</label>
+          <input type="text" class="form-control" id="nAcad" pattern="[a-zA-Z\s]+" placeholder="Ingresa tu ultimo nivel academico cursado" required>
+          <div class="invalid-feedback">
+            Formato invalido.
+          </div>
+        </div>
+
+        <div class="col-12">
+          <label for="lastName" class="form-label">Experiencia Laboral</label>
+          <textarea class="form-control" id="expl" required rows="5"></textarea>
+          <div class="invalid-feedback">
+            Formato invalido.
+          </div>
+        </div>
+
+      </div>
+      <br/>
+      <button class="btn btn-primary" type="submit">Continue to checkout</button>
+    </form>
+  </div>
+  
+  <script id="deptosjson" src="recursos/deptos.json"></script>
+  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>    
+</body>
+
+</html>
