@@ -33,7 +33,7 @@
     <h4 class="mb-3">Cotizar Vehículo</h4>
     <form class="needs-validation" novalidate method="get" action="/action.php">
       <div class="row g-3">
-        <div class="col-12">
+        <div class="col-md-6">
           <label for="firstName" class="form-label">Nombres</label>
           <input type="text" class="form-control" id="firstName" pattern="[a-zA-Z\s]+" placeholder="Ingresa tus nombres" required >
           <div class="invalid-feedback">
@@ -41,7 +41,7 @@
           </div>
         </div>
 
-        <div class="col-12">
+        <div class="col-md-6">
           <label for="lastName" class="form-label">Apellidos</label>
           <input type="text" class="form-control" id="lastName" pattern="[a-zA-Z\s]+" placeholder="Ingresa tus apellidos" required>
           <div class="invalid-feedback">
@@ -50,10 +50,28 @@
         </div>
 
         <div class="col-12">
-          <label for="email" class="form-label">Email <span class="text-muted">(Opcional)</span></label>
-          <input type="email" class="form-control" id="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="you@example.com">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="you@example.com" required>
           <div class="invalid-feedback">
             Please enter a valid email address for shipping updates.
+          </div>
+        </div>
+
+
+
+        <div class="col-md-5">
+          <label for="zip" class="form-label">DPI</label>
+          <input type="text" class="form-control" id="zip" placeholder="" required>
+          <div class="invalid-feedback">
+            Ingresa un DPI valido.
+          </div>
+        </div>
+
+        <div class="col-md-5">
+          <label for="npersonas" class="form-label">Telefono</label>
+          <input type="tel" class="form-control" id="telefono" pattern="[0-9]{8,12}" placeholder="ingresa tu no. de telefono" required>
+          <div class="invalid-feedback">
+            Numero de telefono no valido.
           </div>
         </div>
 
@@ -64,6 +82,7 @@
             Please enter your shipping address.
           </div>
         </div>
+
 
         <div class="col-md-5">
           <label for="depto" class="form-label">Departamento</label>
@@ -81,30 +100,43 @@
           </div>
         </div>
 
-        <div class="col-md-3">
-          <label for="zip" class="form-label">Zip</label>
-          <input type="text" class="form-control" id="zip" placeholder="" required>
-          <div class="invalid-feedback">
-            Zip code required.
-          </div>
-        </div>
 
         <div class="col-md-5">
-          <label for="fnac" class="form-label">Fecha de nacimiento</label>
-          <input type="date" class="form-control" id="fnac">
-        </div>
-
-        <div class="col-md-5">
-          <label for="depto" class="form-label">Sexo</label>
+          <label for="depto" class="form-label">Tipo de Vehiculo</label>
           <select class="form-select" id="deptos" required>
-            <option value="M">M</option>
-            <option value="F">F</option>
+            <option value="M">Sedan</option>
+            <option value="F">SUV</option>
           </select>
         </div>
 
+        <div class="col-md-5">
+          <label for="depto" class="form-label">Marca</label>
+          <select class="form-select" id="deptos" required>
+            <option value="M">Audi</option>
+            <option value="F">BMW</option>
+          </select>
+        </div>
+
+        <div class="col-md-5">
+          <label for="depto" class="form-label">Linea</label>
+          <select class="form-select" id="deptos" required>
+            <option value="M">R6</option>
+            <option value="F">R8</option>
+          </select>
+        </div>
+
+        <div class="col-md-5">
+          <label for="depto" class="form-label">Año</label>
+          <select class="form-select" id="deptos" required>
+            <option value="M">2022</option>
+            <option value="F">2021</option>
+          </select>
+        </div>
+
+
       </div>
       <br/>
-      <button class="btn btn-primary" type="submit">Continue to checkout</button>
+      <button class="btn btn-primary" type="submit">Continuar</button>
     </form>
   </div>
   
