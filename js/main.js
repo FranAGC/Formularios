@@ -21,7 +21,6 @@
   })()
 
 
-
 document.querySelector('#deptos').addEventListener("change", function(){
     document.getElementById("munis").options.length = 0;
     let optMunis = document.getElementById('munis').options;
@@ -37,7 +36,6 @@ document.querySelector('#deptos').addEventListener("change", function(){
 });
 
 
-
 function oldeptos(){
     let optDeptos = document.getElementById('deptos').options;
 
@@ -46,7 +44,6 @@ function oldeptos(){
         new Option(option.text, option.value)
     )
     );
-    
     
     let optMunis = document.getElementById('munis').options;
     var opt;
@@ -92,9 +89,6 @@ function getHoy(){
 }
 
 
-
-
-
 function updateValue(e) {
     var fing = document.getElementById('fing');
     var fsal = document.getElementById("fsal");
@@ -111,9 +105,6 @@ function iniHotel(){
     fing.setAttribute("min", getHoy());
     fsal.setAttribute("min", getHoy());
 }  
-
-
-
 
 
 
