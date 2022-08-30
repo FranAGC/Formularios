@@ -1,5 +1,4 @@
 
-
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (() => {
     'use strict'
@@ -105,6 +104,66 @@ function iniHotel(){
     fing.setAttribute("min", getHoy());
     fsal.setAttribute("min", getHoy());
 }  
+
+
+
+function CUIValido(cui) {
+    var lcui = document.getElementById('cui');
+    var cui = lcui.value;
+    var cuiRegExp = /^[0-9]{4}\s?[0-9]{5}\s?[0-9]{4}$/;
+
+    if (!cuiRegExp.test(cui)) {
+        console.log("CUI con formato inválido");
+        return false;
+    }
+
+    cui = cui.replace(/\s/, '');
+    var depto = parseInt(cui.substring(9, 11), 10);
+    var muni = parseInt(cui.substring(11, 13));
+    var numero = cui.substring(0, 8);
+    var verificador = parseInt(cui.substring(8, 9));
+
+    var munisPorDepto = [17,8,16,16,13,14,19,8,24,21,9,30,32,21,8,17,14,5,11,11,7,17]; 
+    
+    if (depto === 0 || muni === 0)
+    {
+        console.log("CUI con código de municipio o departamento inválido.");
+        return false;
+    }
+    
+    if (depto > munisPorDepto.length)
+    {
+        console.log("CUI con código de departamento inválido.");
+        return false;
+    }
+    
+    if (muni > munisPorDepto[depto -1])
+    {
+        console.log("CUI con código de municipio inválido.");
+        return false;
+    }
+    
+    // Se verifica el correlativo con base 
+    // en el algoritmo del complemento 11.
+    var total = 0;
+    
+    for (var i = 0; i < numero.length; i++)
+    {
+        total += numero[i] * (i + 2);
+    }
+    
+    var modulo = (total % 11);
+    
+    return modulo === verificador;
+}
+
+document.querySelector('#cui').addEventListener("change", function(){
+    if(CUIValido()){
+        document.getElementById('cui').setAttribute("class", "form-control is-valid");
+    }else{
+        document.getElementById('cui').setAttribute("class", "form-control is-invalid");
+    }
+});
 
 
 
